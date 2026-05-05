@@ -1,66 +1,179 @@
-<<<<<<< HEAD
-# Apollo Convergence Studio (interview prototype)
+# Apollo Convergence Studio
 
-A **wealth advisor decision studio** prototype: diagnose a client portfolio gap, visualize a public/private fixed-income construction, drill into product mechanics (**Product X-Ray**), rehearse objections (**Objection Simulator**), and export a **one-page RM brief**.
+**Apollo Convergence Studio** is an interview prototype for a wealth-sales/product role.  
+It is designed as a **relationship-first advisor workspace**: diagnose portfolio gaps, design public/private fixed-income solutions, explain product structure, rehearse hard client objections, and execute through distributor workflows with suitability controls.
 
-This project is an **interview / portfolio artifact** only. It is **not affiliated with Apollo Global Management**, not investment advice, and not a commercial product. It aligns with a private product framework note (`2026-05-02-apollo-convergence-studio-framework`).
+This project is intentionally positioned as:
+- A **decision-support and communication studio**, not a generic dashboard
+- A **sales/advisory workflow artifact**, not a portfolio management system
+- A **demonstration of commercial judgment**, not a product pitch engine
 
-## Stack
+## Important Disclaimer
 
-- [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/) for layout and the ivory / ink / copper visual direction
+- Educational prototype only
+- Not affiliated with Apollo Global Management
+- Not investment advice, solicitation, or an offer to buy/sell securities
+- Any product references are sourced from Apollo public pages and should be independently verified for eligibility, jurisdiction, and current terms
 
-## What to upload to GitHub (format / layout)
+---
 
-GitHub Pages for this project uses **GitHub Actions** to run `npm ci` and `npm run build`. You must push a **normal source-code repository**, not a hand-made “website folder” of only HTML.
+## Why This Exists
 
-**Repository root** = the `apollo-convergence-studio` folder (on GitHub’s **Code** tab you should see **`package.json` at the top level**, not nested under another folder like `AI Projects/...`).
+The core thesis is simple:
 
-**Include (tracked by git):**
+> Wealth conversations are no longer “public vs private.”  
+> They are about **portfolio role**, **liquidity budget**, **client suitability**, and **trust over time**.
 
-| Path | Why |
-|------|-----|
-| `package.json` + `package-lock.json` | CI installs dependencies |
-| `index.html` | Vite entry |
-| `vite.config.ts` | Build + correct `base` for Pages |
-| `tailwind.config.js`, `postcss.config.js` | Styles |
-| `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json` | TypeScript |
-| `eslint.config.js` | `npm run lint` in CI |
-| **`src/`** (entire tree) | Application code |
-| **`public/`** (e.g. `favicon.svg`, `icons.svg`, `.nojekyll`) | Static assets copied to `dist` |
-| **`.github/workflows/pages.yml`** (+ `ci.yml` if you use it) | **Dot-folder** — easy to miss when zipping manually |
+This studio demonstrates how an RM could move from:
+1) client diagnosis,  
+2) to construction logic,  
+3) to product explanation,  
+4) to objection handling,  
+5) to distributor execution,  
+6) to repeatable reporting.
 
-**Do not upload** (ignored on purpose; GitHub will install/build them):
+---
 
-- `node_modules/`
-- `dist/`
+## Audience (Interview Context)
 
-**Wrong approaches that often cause 404:**
+Designed for:
+- Wealth / private bank sales interviewers
+- Product strategy and distribution stakeholders
+- Investment counselors / RMs
+- Anyone evaluating whether the candidate understands both **client conversation quality** and **distribution execution reality**
 
-- Only uploading `dist/` or a few HTML files — Actions has nothing to build, or wrong layout.
-- Pushing the parent folder so GitHub shows `apollo-convergence-studio/package.json` — workflows in `.github/` at repo root won’t see your app unless you adapt paths.
-- Missing **`.github/workflows/`** so Pages never deploys.
+---
 
-**Recommended:** from your machine, in **this** folder:
+## Product Experience Map
 
-```bash
-cd "/path/to/apollo-convergence-studio"
-git status   # should list src/, package.json, .github/..., and NOT node_modules
-git push origin main
-```
+### 1) Home
+Purpose: big-picture context + strategy and product landscape.
 
-## If the site shows 404
+Includes:
+- Apollo strategy summary (Credit / Equity / Real Assets)
+- Public deep links to Apollo Wealth strategy/product pages
+- Full list of 15 Apollo Wealth products (from public page)
+- Visual highlighting for **semi-liquid**, **open-end/evergreen**, and related vehicle types
+- Sales pipeline + upcoming client events timeline
+- Embedded **Suitability & Risk Checklist**
 
-1. **Use the Pages URL**, not the repo file browser. Live app looks like:  
-   `https://<username>.github.io/<repository>/`  
-   Opening `https://github.com/<username>/<repository>` is **not** the running demo.
-2. **Include the repo name in the path** (project Pages), e.g. `...github.io/my-repo/` — not only `...github.io/`.
-3. **Settings → Pages → Source** = **GitHub Actions**, and **Actions** tab shows a green **Deploy to GitHub Pages** run.
-4. On GitHub, confirm the file exists:  
-   `.github/workflows/pages.yml`  
-   If it’s missing, your push omitted the hidden `.github` directory — add it and push again.
+### 2) Convergence Board
+Purpose: convert client profile into a portfolio-construction narrative.
 
-## Run locally
+Includes:
+- Thesis bar
+- Editable client portrait
+- Today vs Proposed allocation engine (with liquidity-budget slider)
+- Portfolio diagnosis panel
+- Why-now context cards
+- Next-best-action navigation
+
+### 3) Product X-Ray
+Purpose: explain sleeves in advisor language, not marketing copy.
+
+Includes:
+- Product mechanics
+- Portfolio role
+- First-break risks
+- Public-vs-private tradeoffs
+- Apollo public references / Academy links
+
+### 4) Objection Simulator
+Purpose: rehearse difficult conversations with composure and compliance awareness.
+
+Includes:
+- Common objections
+- Response style toggles (Client / RM / CIO)
+- Short + market-style + disclosure + “what not to say”
+- Extended talk tracks and drill-down notes
+
+### 5) RM Brief
+Purpose: one-page internal pre-meeting artifact.
+
+Includes:
+- Client snapshot and diagnosis
+- Construction rationale
+- Objection checklist
+- Risk/disclosure language examples
+- Meeting checklist and next-step goal
+
+### 6) Distributor Launch Plan
+Purpose: align with real distribution job requirements.
+
+Workflow:
+1. Distributor mapping  
+2. Eligibility check  
+3. NDA / confidentiality check  
+4. Product due diligence  
+5. Platform approval  
+6. RM training  
+7. Roadshow / client outreach  
+8. Subscription support  
+9. Salesforce tracking  
+10. After-sales reporting
+
+---
+
+## Suitability & Risk Checklist (Core Control)
+
+The checklist captures critical pre-trade questions:
+- Long-term investment horizon?
+- Illiquidity tolerance?
+- Qualified / professional investor status?
+- Understanding of gates and redemption limits?
+- Fee tolerance?
+- Private market NAV valuation understanding?
+- Concentration risk reviewed?
+- Currency exposure reviewed?
+- Not emergency liquidity capital?
+- Distributor approval status confirmed?
+
+Design goal: show that product enthusiasm is always gated by suitability and risk framing.
+
+---
+
+## Capability Showcase (What this demonstrates)
+
+- **Portfolio reasoning:** public/private construction logic with liquidity-aware sizing
+- **Product communication:** translating complexity into role-based language
+- **Commercial realism:** distributor workflow, platform approval, and post-sales tracking
+- **Client handling:** objection rehearsal with audience-specific framing
+- **Governance mindset:** suitability checklist and explicit risk controls
+- **Execution quality:** responsive frontend, clean navigation, production-like structure
+
+---
+
+## 5-Minute Demo Flow (Interview-Ready)
+
+1. **Open Home**  
+   Show strategy pillars, 15-product map, and why relationship/trust framing matters.
+
+2. **Open Convergence Board**  
+   Edit client portrait quickly, move liquidity slider, narrate why proposal changes.
+
+3. **Open Product X-Ray (Private IG or ABF)**  
+   Explain “what it solves,” “what breaks first,” and role vs public credit.
+
+4. **Open Objection Simulator**  
+   Run one hard objection across Client and CIO language.
+
+5. **Open Distributor Launch Plan + Checklist**  
+   Show this is not only investment thinking but launch execution.
+
+6. **Open RM Brief**  
+   End with tangible meeting output.
+
+---
+
+## Tech Stack
+
+- [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- Static deployment via GitHub Pages workflow
+
+---
+
+## Local Development
 
 ```bash
 cd apollo-convergence-studio
@@ -68,56 +181,49 @@ npm install
 npm run dev
 ```
 
-Then open the URL Vite prints (typically `http://localhost:5173`).
-
-## Build
+Build + verify:
 
 ```bash
+npm run lint
 npm run build
-npm run preview   # serve production build (default base: /)
-```
-
-### Build like GitHub Pages (subpath)
-
-Project Pages live at `https://<user>.github.io/<repo>/`. Vite needs that base when building:
-
-```bash
-VITE_BASE_PATH=/<your-repo-name>/ npm run build
 npm run preview
-# Open http://localhost:4173/<your-repo-name>/
 ```
 
-Replace `<your-repo-name>` with your GitHub repository name (the deploy workflow sets this automatically).
+---
 
-## GitHub Pages
+## GitHub Pages Deployment
 
-1. Push this repository (with this folder as the **repo root**) to GitHub on `main` or `master`.
-2. In the repo: **Settings → Pages → Build and deployment → Source**: choose **GitHub Actions**.
-3. The workflow [.github/workflows/pages.yml](./.github/workflows/pages.yml) builds with the correct `VITE_BASE_PATH` and deploys `dist` to Pages.
-4. After the first successful run, your site URL appears under **Pages** and in the workflow summary — typically `https://<username>.github.io/<repository>/`.
+The repo includes workflow-based Pages deployment.
 
-If your repository is a **user or organization site** named `<username>.github.io`, the workflow uses base `/` automatically.
+1. Push to `main` (or `master`)
+2. In GitHub repo settings, set **Pages Source = GitHub Actions**
+3. Ensure Actions permissions allow pages deployment
+4. Wait for `.github/workflows/pages.yml` to finish
 
-**One-time:** ensure **Settings → Actions → General → Workflow permissions** allows the `pages` deployment (read/write for **Pages** is set in the workflow file).
+Expected URL format:
+- `https://<username>.github.io/<repository>/`
 
-## What to click in the demo
+If you see 404:
+- Verify you are opening the Pages URL (not repo URL)
+- Confirm workflow is green
+- Confirm `.github/workflows/pages.yml` exists in the pushed branch
 
-1. **Convergence Board** — Move the **illiquidity budget** slider; the **Proposed** stack rebalance animates. Read **Why now** cards and **Next best action**.
-2. **Product X-Ray** — Switch sleeves (ABF, private IG, direct lending, secondaries, liquid structured). Review “what breaks first” and vs. public credit.
-3. **Objection Simulator** — Pick an objection and toggle **Client / RM / CIO** language.
-4. **RM Brief** — **Copy to clipboard** for a one-page internal prep note (reflects the current slider value).
+---
 
-## CI
+## Repository Structure (Key Files)
 
-- [.github/workflows/ci.yml](./.github/workflows/ci.yml) — on push/PR to `main`/`master`, runs `lint` and `build` (default base `/`).
-- [.github/workflows/pages.yml](./.github/workflows/pages.yml) — on push to `main`/`master`, lints, builds with Pages base path, and deploys to **GitHub Pages**.
+- `src/views/HomeView.tsx`
+- `src/views/ConvergenceBoard.tsx`
+- `src/views/ProductXRay.tsx`
+- `src/views/ObjectionSimulator.tsx`
+- `src/views/RMBrief.tsx`
+- `src/views/DistributorLaunchPlan.tsx`
+- `src/components/SuitabilityRiskChecklist.tsx`
+- `src/data/apolloInvestmentProducts15.ts`
+- `src/data/advisoryPipeline.ts`
 
-If this project lives inside a **monorepo**, copy or adapt these workflows to the monorepo root and set `defaults.run.working-directory` to this package path; adjust `VITE_BASE_PATH` if your Pages URL is not `/<repo>/`.
+---
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
-=======
-# Apollo-convergence-studio
-Apollo Convergence Studio is a wealth advisor decision studio, diagnose portfolio gaps, map Apollo’s public/private convergence thesis to construction, explain sleeves in client language, rehearse objections, export a meeting-ready brief. Wealth narrative + PB workflow + suitability + risk framing
->>>>>>> 91915323a595a22b727a0e83a3d3fb0bb33e8e4e
+MIT — see `LICENSE`.
