@@ -1,6 +1,6 @@
 # Apollo Convergence Studio
 
-**Apollo Convergence Studio** is an interview prototype for a wealth-sales/product role.  
+**Apollo Convergence Studio** is an interview prototype for a wealth-sales covering Greater China.  
 It is designed as a **relationship-first advisor workspace**: diagnose portfolio gaps, design public/private fixed-income solutions, explain product structure, rehearse hard client objections, and execute through distributor workflows with suitability controls.
 
 This project is intentionally positioned as:
@@ -34,10 +34,10 @@ This studio demonstrates how an RM could move from:
 
 ---
 
-## Audience (Interview Context)
+## Audience
 
 Designed for:
-- Wealth / private bank sales interviewers
+- Wealth / private bank sales 
 - Product strategy and distribution stakeholders
 - Investment counselors / RMs
 - Anyone evaluating whether the candidate understands both **client conversation quality** and **distribution execution reality**
@@ -143,7 +143,7 @@ Design goal: show that product enthusiasm is always gated by suitability and ris
 
 ---
 
-## 5-Minute Demo Flow (Interview-Ready)
+## 5-Minute Demo Flow
 
 1. **Open Home**  
    Show strategy pillars, 15-product map, and why relationship/trust framing matters.
