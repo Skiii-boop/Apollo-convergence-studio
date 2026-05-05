@@ -1,45 +1,76 @@
 import { useMemo, useState } from 'react'
+import type { ClientPortrait } from '../types'
 import { proposedSleeves } from '../lib/allocationModel'
-import { clientPortrait, diagnosisBullets, thesisLine } from '../data/demoClient'
+import { diagnosisBullets, thesisLine } from '../data/demoClient'
 import { objectionCatalog } from '../data/objections'
+import {
+  APOLLO_ACADEMY,
+  APOLLO_IG_PRIVATE_CREDIT_STRATEGY,
+  APOLLO_INSIGHTS,
+} from '../data/apolloReferences'
 
 interface RMBriefProps {
   liquidityBudget: number
+  portrait: ClientPortrait
 }
 
-export function RMBrief({ liquidityBudget }: RMBriefProps) {
+export function RMBrief({ liquidityBudget, portrait }: RMBriefProps) {
   const [copied, setCopied] = useState(false)
   const text = useMemo(() => {
     const prop = proposedSleeves(liquidityBudget)
-    const topSleeves = [...prop].sort((a, b) => b.pct - a.pct).slice(0, 4)
-    const objections = objectionCatalog.slice(0, 3).map((o) => o.prompt)
+    const topSleeves = [...prop].sort((a, b) => b.pct - a.pct).slice(0, 6)
+    const objections = objectionCatalog.map((o) => o.prompt)
     return [
-      'RM BRIEF — INTERNAL PREP',
+      'RM BRIEF — INTERNAL PREP (interview prototype)',
       '—',
-      `Client snapshot: ${clientPortrait.netWorthBand}. ${clientPortrait.holdingsSummary}`,
-      `Income / liquidity: ${clientPortrait.incomeTarget}; ${clientPortrait.liquidityNeed}`,
-      `Risk / bias: ${clientPortrait.riskTolerance}; ${clientPortrait.objectionBias}`,
+      'CLIENT SNAPSHOT',
+      `Net worth: ${portrait.netWorthBand}`,
+      `Holdings: ${portrait.holdingsSummary}`,
+      `Income target: ${portrait.incomeTarget}`,
+      `Liquidity: ${portrait.liquidityNeed}`,
+      `Risk: ${portrait.riskTolerance}`,
+      `Currency: ${portrait.currencyPref}`,
+      `Objection bias: ${portrait.objectionBias}`,
       '',
-      'Portfolio diagnosis:',
+      'PORTFOLIO DIAGNOSIS',
       ...diagnosisBullets.map((b) => `• ${b}`),
       '',
-      `Thesis bar: ${thesisLine}`,
+      `THESIS BAR: ${thesisLine}`,
       '',
-      `Construction note (illiquidity budget slider = ${liquidityBudget.toFixed(0)}):`,
+      `CONSTRUCTION (illiquidity budget slider = ${liquidityBudget.toFixed(0)} / 100)`,
       ...topSleeves.map((s) => `• ${s.label}: ~${s.pct}%`),
       '',
-      'Top objections to rehearse:',
+      'PRODUCT RATIONALE (talking points)',
+      '• Public IG remains for price discovery and redeployable liquidity — convergence is construction, not “sell public.”',
+      '• Investment-grade private credit: sleeve only after liquidity ladder; pair with Apollo public framing on IG share of private markets (strategy page + insights).',
+      '• ABF / secondaries: pattern and vintage diversification vs. single-factor corporate stack — size to governance comfort.',
+      '',
+      'APOLLO PUBLIC REFERENCES (verify URLs before meetings)',
+      `• IG private credit strategy: ${APOLLO_IG_PRIVATE_CREDIT_STRATEGY}`,
+      `• Demystifying Private IG: ${APOLLO_INSIGHTS.demystifyingPrivateIgDec2024}`,
+      `• Liquidity in Private IG: ${APOLLO_INSIGHTS.liquidityPrivateIgFeb2026}`,
+      `• Convergence credit: ${APOLLO_INSIGHTS.convergenceCreditMay2026}`,
+      `• Credit cycle / platform breadth: ${APOLLO_INSIGHTS.investingAcrossCreditCycleApr2026}`,
+      `• Apollo Academy — learning center: ${APOLLO_ACADEMY.learningCenter}`,
+      '',
+      'OBJECTIONS TO REHEARSE (full list)',
       ...objections.map((o, i) => `${i + 1}. ${o}`),
+      'Expand each in Objection Simulator — use “Deeper prep” for 60–90s tracks and Apollo echo lines.',
       '',
-      'Compliant risk language (examples):',
-      '• Illiquidity premium is not guaranteed; marks may lag fundamentals.',
-      '• Private and structured sleeves involve manager, documentation, and operational risk.',
-      '• Stress scenarios include slower distributions, gates, and loss of capital.',
+      'COMPLIANT RISK LANGUAGE (examples — firm-approved wording supersets this)',
+      '• Illiquidity premium is not guaranteed; marks may lag fundamentals; past spread pickup is not indicative of future results.',
+      '• Private and structured sleeves involve manager, documentation, operational, and liquidity risk; stress includes slower distributions, gates, and loss of principal.',
+      '• No single sleeve solves retirement income; suitability depends on client objectives, constraints, and full financial picture.',
       '',
-      'Next meeting goal:',
-      'Align on liquidity ladder first, then agree on sleeve caps for ABF / private IG / secondaries vs. public IG trim.',
+      'MEETING CHECKLIST',
+      '• Confirm liquidity months and cap-call calendar before any illiquidity increase.',
+      '• Agree max sleeve weights for private IG, ABF, secondaries vs. public IG trim.',
+      '• Book specialist follow-up if client wants document-level ABF or secondaries mechanics.',
+      '',
+      'NEXT MEETING GOAL',
+      'Align on liquidity ladder first, then agree on sleeve caps vs. public IG trim; leave with one agreed homework: policy statement on illiquidity budget.',
     ].join('\n')
-  }, [liquidityBudget])
+  }, [liquidityBudget, portrait])
 
   async function copy() {
     await navigator.clipboard.writeText(text)
@@ -56,8 +87,8 @@ export function RMBrief({ liquidityBudget }: RMBriefProps) {
         <div className="rounded-lg border border-navy/10 bg-ivory/80 p-5">
           <p className="font-display text-xl text-ink">One-page export</p>
           <p className="mt-2 text-sm text-graphite">
-            Generated from the live board state (liquidity slider) and the default objection set. Tone: internal prep
-            note, not marketing collateral.
+            Pulls your edited client portrait, live liquidity slider, full objection list, and Apollo public reference URLs.
+            Tone: internal prep — not marketing or compliance-approved disclosure language.
           </p>
         </div>
         <button

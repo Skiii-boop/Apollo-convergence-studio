@@ -37,7 +37,7 @@ export function proposedSleeves(liquidityBudget0to100: number): Sleeve[] {
     { id: 'hy', label: 'Liquid structured / HY', pct: hy, tone: 'structured' as const },
     { id: 'liq', label: 'Liquidity bucket (explicit)', pct: liquidityBucket, tone: 'liquidity' as const },
     { id: 'abf', label: 'ABF sleeve', pct: abf, tone: 'private' as const },
-    { id: 'pvtig', label: 'Private IG / FI replacement', pct: privateIG, tone: 'private' as const },
+    { id: 'pvtig', label: 'Investment-grade private credit', pct: privateIG, tone: 'private' as const },
     { id: 'dl', label: 'Direct lending (capped)', pct: direct, tone: 'private' as const },
     { id: 'sec', label: 'Secondaries', pct: secondaries, tone: 'private' as const },
     { id: 'other', label: 'Residual / tactical', pct: Math.max(2, other), tone: 'publicFi' as const },

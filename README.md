@@ -9,6 +9,56 @@ This project is an **interview / portfolio artifact** only. It is **not affiliat
 - [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/) for layout and the ivory / ink / copper visual direction
 
+## What to upload to GitHub (format / layout)
+
+GitHub Pages for this project uses **GitHub Actions** to run `npm ci` and `npm run build`. You must push a **normal source-code repository**, not a hand-made “website folder” of only HTML.
+
+**Repository root** = the `apollo-convergence-studio` folder (on GitHub’s **Code** tab you should see **`package.json` at the top level**, not nested under another folder like `AI Projects/...`).
+
+**Include (tracked by git):**
+
+| Path | Why |
+|------|-----|
+| `package.json` + `package-lock.json` | CI installs dependencies |
+| `index.html` | Vite entry |
+| `vite.config.ts` | Build + correct `base` for Pages |
+| `tailwind.config.js`, `postcss.config.js` | Styles |
+| `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json` | TypeScript |
+| `eslint.config.js` | `npm run lint` in CI |
+| **`src/`** (entire tree) | Application code |
+| **`public/`** (e.g. `favicon.svg`, `icons.svg`, `.nojekyll`) | Static assets copied to `dist` |
+| **`.github/workflows/pages.yml`** (+ `ci.yml` if you use it) | **Dot-folder** — easy to miss when zipping manually |
+
+**Do not upload** (ignored on purpose; GitHub will install/build them):
+
+- `node_modules/`
+- `dist/`
+
+**Wrong approaches that often cause 404:**
+
+- Only uploading `dist/` or a few HTML files — Actions has nothing to build, or wrong layout.
+- Pushing the parent folder so GitHub shows `apollo-convergence-studio/package.json` — workflows in `.github/` at repo root won’t see your app unless you adapt paths.
+- Missing **`.github/workflows/`** so Pages never deploys.
+
+**Recommended:** from your machine, in **this** folder:
+
+```bash
+cd "/path/to/apollo-convergence-studio"
+git status   # should list src/, package.json, .github/..., and NOT node_modules
+git push origin main
+```
+
+## If the site shows 404
+
+1. **Use the Pages URL**, not the repo file browser. Live app looks like:  
+   `https://<username>.github.io/<repository>/`  
+   Opening `https://github.com/<username>/<repository>` is **not** the running demo.
+2. **Include the repo name in the path** (project Pages), e.g. `...github.io/my-repo/` — not only `...github.io/`.
+3. **Settings → Pages → Source** = **GitHub Actions**, and **Actions** tab shows a green **Deploy to GitHub Pages** run.
+4. On GitHub, confirm the file exists:  
+   `.github/workflows/pages.yml`  
+   If it’s missing, your push omitted the hidden `.github` directory — add it and push again.
+
 ## Run locally
 
 ```bash

@@ -8,6 +8,20 @@ export function NextActions({ onGo }: { onGo: (v: StudioView) => void }) {
         <button
           type="button"
           className="rounded-md border border-white/15 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-ivory transition-colors hover:bg-white/10"
+          onClick={() => onGo('home')}
+        >
+          Home — pipeline & 15 products
+        </button>
+        <button
+          type="button"
+          className="rounded-md border border-white/15 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-ivory transition-colors hover:bg-white/10"
+          onClick={() => onGo('distributor')}
+        >
+          Distributor Launch Plan
+        </button>
+        <button
+          type="button"
+          className="rounded-md border border-white/15 bg-white/5 px-4 py-3 text-left text-sm font-semibold text-ivory transition-colors hover:bg-white/10"
           onClick={() => onGo('xray')}
         >
           Open product X-Ray

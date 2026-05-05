@@ -82,6 +82,30 @@ export function ObjectionSimulator() {
             <p className="mt-2 text-sm leading-relaxed text-navy">{body}</p>
           </section>
         ))}
+
+        <details className="group rounded-lg border border-olive/25 bg-olive/5 p-5 shadow-panel open:bg-olive/10">
+          <summary className="cursor-pointer font-display text-lg text-ink marker:text-copper">
+            Deeper prep: talk track, Apollo echo, drill-down
+          </summary>
+          <div className="mt-4 space-y-5 border-t border-navy/10 pt-4">
+            <div>
+              <h4 className="font-mono text-[10px] uppercase tracking-wider text-mist">60–90s talk track</h4>
+              <p className="mt-2 text-sm leading-relaxed text-navy">{block.talkTrack60s}</p>
+            </div>
+            <div>
+              <h4 className="font-mono text-[10px] uppercase tracking-wider text-mist">Drill-down (questions, overlap, sequencing)</h4>
+              <p className="mt-2 text-sm leading-relaxed text-navy">{block.deepDive}</p>
+            </div>
+            <div className="rounded-md border border-navy/10 bg-panel p-4">
+              <h4 className="font-mono text-[10px] uppercase tracking-wider text-copper">Apollo public echo (tone only)</h4>
+              <p className="mt-2 text-xs text-graphite">{block.apolloEcho}</p>
+              <p className="mt-3 text-[10px] text-mist">
+                Paraphrase for rehearsal — not an official Apollo statement. Read cited Apollo pages before live client
+                use.
+              </p>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   )

@@ -2,6 +2,8 @@ import type { ReactNode } from 'react'
 import type { StudioView } from '../types'
 
 const nav: { id: StudioView; label: string }[] = [
+  { id: 'home', label: 'Home' },
+  { id: 'distributor', label: 'Distributor Launch Plan' },
   { id: 'board', label: 'Convergence Board' },
   { id: 'xray', label: 'Product X-Ray' },
   { id: 'objections', label: 'Objection Simulator' },
@@ -27,8 +29,8 @@ export function AppShell({ view, onView, children }: AppShellProps) {
               Apollo Convergence Studio
             </h1>
             <p className="mt-1 max-w-xl text-sm text-graphite">
-              Diagnose portfolio gaps, map public/private construction, explain sleeves, rehearse objections,
-              export a meeting brief.
+              Map Apollo-aligned solutions to investor needs, run a disciplined advisory pipeline, and compound trust
+              over time—then use the board, X-Ray, objections, and brief for execution.
             </p>
           </div>
           <nav className="flex flex-wrap gap-2" aria-label="Primary">

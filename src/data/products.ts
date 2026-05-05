@@ -1,4 +1,11 @@
 import type { ProductId } from '../types'
+import { APOLLO_IG_PRIVATE_CREDIT_STRATEGY, APOLLO_ACADEMY, APOLLO_INSIGHTS } from './apolloReferences'
+
+export interface ApolloCitation {
+  headline: string
+  url: string
+  excerpt: string
+}
 
 export interface ProductXRayContent {
   id: ProductId
@@ -13,6 +20,11 @@ export interface ProductXRayContent {
   firstBreak: string[]
   vsPublic: { win: string; lose: string }
   apolloAngle: string
+  /** Official Apollo wealth strategy page (hero pulled in X-Ray when set). */
+  officialStrategyUrl?: string
+  showApolloHero?: boolean
+  apolloCitations?: ApolloCitation[]
+  apolloAcademyLinks?: { label: string; url: string }[]
 }
 
 export const products: ProductXRayContent[] = [
@@ -50,34 +62,75 @@ export const products: ProductXRayContent[] = [
   },
   {
     id: 'privateIG',
-    title: 'Private IG / FI replacement',
-    tagline: 'Illiquid credit with covenant and documentation closer to loans than bonds.',
-    solves: 'Step-up in spread and structure vs. public IG when the client can hold through cycles.',
-    whyNow: 'Convergence story: private sleeves integrated into mainstream FI allocation where liquidity budget allows.',
-    whereFits: 'Core carry sleeve inside the fixed-income budget; size gated by liquidity and concentration limits.',
-    whatWrong: 'Refinance walls, documentation drift, manager selection, stale marks vs. public marks.',
+    title: 'Investment-grade private credit',
+    tagline:
+      'Non-traded corporate and consumer credit sized for income and diversification — Apollo frames much of the private credit universe as investment grade.',
+    solves:
+      'Potential step-up in spread and structural protections vs. commoditized public IG when the client can hold illiquidity and wants fixed-income replacement, not more equity beta.',
+    whyNow:
+      'Apollo’s public wealth narrative ties private IG to retirement income needs and to a converging public/private credit market; liquidity mechanisms (evergreens, syndication, pricing) continue to evolve.',
+    whereFits:
+      'Inside the fixed-income budget as a sleeve with explicit illiquidity and concentration limits — paired with a liquidity ladder, not as a cash proxy.',
+    whatWrong:
+      'Refinance walls, documentation drift, manager and origination dispersion, appraisal-based marks, and basis risk if overlapped uncritically with public IG factor.',
     flowSteps: [
-      'Borrower / sponsor',
-      'Private loan docs & covenants',
-      'Cash interest + amortization',
-      'Investor loan exposure',
+      'Borrower / asset pool (corporate or consumer)',
+      'Bilateral or platform-originated documentation',
+      'Cash coupons + amortization / structural protections',
+      'Investor exposure in fund or SMA form',
     ],
     portfolioRole: [
-      'Replaces part of public IG when yield hurdle is not met in liquid markets.',
-      'Pairs with a defined liquidity bucket for behavioral risk.',
-      'Not a substitute for sovereign / rates hedging where that is the mandate.',
+      'Can replace or complement part of generic public IG when the return hurdle is not met in liquid markets alone.',
+      'Pairs with ABF / structured sleeves where the goal is pattern diversification, not stacking the same corporate factor.',
+      'Should not absorb liquidity needed for cap calls, taxes, or behavioral “panic” windows.',
     ],
     firstBreak: [
-      'Refinancing closure in stressed sectors',
-      'EBITDA misses vs. underwritten case',
-      'Covenant pressure and amendment frequency',
+      'Refinancing markets shut for weaker names or sectors',
+      'EBITDA / cashflow misses vs. underwritten case',
+      'Covenant pressure, amendments, and PIK creep',
+      'Mark lag vs. public TRACE — client perception risk in stress',
     ],
     vsPublic: {
-      win: 'Structural pickup and lender protections vs. public bond indentures in calm markets.',
-      lose: 'Secondary liquidity and mark frequency vs. public IG ETFs.',
+      win: 'Documentation and lender protections negotiated bilaterally; potential spread pickup per unit of risk in select sleeves.',
+      lose: 'Secondary liquidity and continuous price discovery vs. public IG — requires governance and communication discipline.',
     },
     apolloAngle:
-      'Fits Apollo’s fixed-income replacement framing for wealth: sleeve role, not product shelf sorting by yield.',
+      'Apollo publicly emphasizes origination at scale (direct, platforms, bank partnerships) and IG private credit as a retirement-relevant, systemically diversified funding channel — use their materials for tone, always with suitability and disclosures.',
+    officialStrategyUrl: APOLLO_IG_PRIVATE_CREDIT_STRATEGY,
+    showApolloHero: true,
+    apolloAcademyLinks: [
+      { label: 'Apollo Academy — register', url: APOLLO_ACADEMY.register },
+      { label: 'Learning center', url: APOLLO_ACADEMY.learningCenter },
+      { label: 'Alternative Perspectives', url: APOLLO_ACADEMY.alternativePerspectives },
+      { label: 'The View From Apollo (podcast)', url: APOLLO_ACADEMY.viewFromApolloPodcast },
+      { label: '2026 Outlook (course)', url: APOLLO_ACADEMY.outlook2026 },
+    ],
+    apolloCitations: [
+      {
+        headline: 'Leading with Private Investment-Grade Credit (strategy page)',
+        url: APOLLO_IG_PRIVATE_CREDIT_STRATEGY,
+        excerpt:
+          'Apollo describes private credit as a large market where a majority is investment grade, financing business growth and household prosperity; private IG is positioned as helping generate yield and retirement income as demographics strain savings.',
+      },
+      {
+        headline: 'Demystifying the Opportunity in Investment Grade Private Credit',
+        url: APOLLO_INSIGHTS.demystifyingPrivateIgDec2024,
+        excerpt:
+          'Apollo authors argue Private IG can offer higher spread premia, lower historical losses (as discussed in their piece), enhanced seniority and downside protection, and diversification — and that public vs. private risk assumptions are converging as issuers tap both markets.',
+      },
+      {
+        headline: 'How Is Liquidity Evolving in Private Investment-Grade Credit?',
+        url: APOLLO_INSIGHTS.liquidityPrivateIgFeb2026,
+        excerpt:
+          'Apollo discusses how private IG is evolving toward more standardized liquidity options — relevant when clients ask about gates, evergreen structures, and how “private” compares to public TRACE liquidity.',
+      },
+      {
+        headline: 'Convergence: Finding Opportunity in a Converging Credit Market',
+        url: APOLLO_INSIGHTS.convergenceCreditMay2026,
+        excerpt:
+          'Apollo frames dispersion and underwriting depth as credit markets merge — useful language when explaining why construction matters more than a binary public vs. private debate.',
+      },
+    ],
   },
   {
     id: 'directLending',
