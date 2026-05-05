@@ -52,6 +52,12 @@ export function AppShell({ view, onView, children }: AppShellProps) {
         </div>
       </header>
       <main className="mx-auto max-w-[1400px] px-5 py-10">{children}</main>
+      <div
+        className="pointer-events-none fixed bottom-3 right-4 select-none font-mono text-[10px] uppercase tracking-[0.2em] text-navy/30"
+        aria-hidden="true"
+      >
+        Created by Skye Wang
+      </div>
       <footer className="border-t border-navy/10 py-8 text-center font-mono text-[10px] leading-relaxed text-mist">
         Interview prototype — educational UI only, not investment advice. Not affiliated with Apollo Global Management.
         For portfolio / interview use; hosted copy may live on GitHub Pages.

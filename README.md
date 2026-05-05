@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Apollo Convergence Studio (interview prototype)
 
 A **wealth advisor decision studio** prototype: diagnose a client portfolio gap, visualize a public/private fixed-income construction, drill into product mechanics (**Product X-Ray**), rehearse objections (**Objection Simulator**), and export a **one-page RM brief**.
@@ -116,3 +117,7 @@ If this project lives inside a **monorepo**, copy or adapt these workflows to th
 ## License
 
 MIT — see [LICENSE](./LICENSE).
+=======
+# Apollo-convergence-studio
+Apollo Convergence Studio is a wealth advisor decision studio, diagnose portfolio gaps, map Apollo’s public/private convergence thesis to construction, explain sleeves in client language, rehearse objections, export a meeting-ready brief. Wealth narrative + PB workflow + suitability + risk framing
+>>>>>>> 91915323a595a22b727a0e83a3d3fb0bb33e8e4e
