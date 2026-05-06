@@ -8,6 +8,9 @@ This project is intentionally positioned as:
 - A **sales/advisory workflow artifact**, not a portfolio management system
 - A **demonstration of commercial judgment**, not a product pitch engine
 
+## Github pages
+https://skiii-boop.github.io/Apollo-convergence-studio/ 
+
 ## Important Disclaimer
 
 - Educational prototype only
@@ -189,40 +192,6 @@ npm run build
 npm run preview
 ```
 
----
-
-## GitHub Pages Deployment
-
-The repo includes workflow-based Pages deployment.
-
-1. Push to `main` (or `master`)
-2. In GitHub repo settings, set **Pages Source = GitHub Actions**
-3. Ensure Actions permissions allow pages deployment
-4. Wait for `.github/workflows/pages.yml` to finish
-
-Expected URL format:
-- `https://<username>.github.io/<repository>/`
-
-If you see 404:
-- Verify you are opening the Pages URL (not repo URL)
-- Confirm workflow is green
-- Confirm `.github/workflows/pages.yml` exists in the pushed branch
-
----
-
-## Repository Structure (Key Files)
-
-- `src/views/HomeView.tsx`
-- `src/views/ConvergenceBoard.tsx`
-- `src/views/ProductXRay.tsx`
-- `src/views/ObjectionSimulator.tsx`
-- `src/views/RMBrief.tsx`
-- `src/views/DistributorLaunchPlan.tsx`
-- `src/components/SuitabilityRiskChecklist.tsx`
-- `src/data/apolloInvestmentProducts15.ts`
-- `src/data/advisoryPipeline.ts`
-
----
 
 ## License
 
