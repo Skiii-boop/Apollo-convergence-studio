@@ -11,6 +11,9 @@ This project is intentionally positioned as:
 ## Github pages
 https://skiii-boop.github.io/Apollo-convergence-studio/ 
 
+Or scan the QR below <img width="420" height="420" alt="apollo-convergence-studio-qr" src="https://github.com/user-attachments/assets/68e4f850-f605-42fd-ad9a-b018eddcf256" />
+
+
 ## Important Disclaimer
 
 - Educational prototype only
